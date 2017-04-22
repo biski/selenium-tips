@@ -110,3 +110,9 @@ public class LoggerAspect {
     }
 }
 ```
+### Demo
+```
+open()
+setSearchText(text = selenium)
+waitForResults()
+```

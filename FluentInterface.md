@@ -9,7 +9,6 @@ public class MenuCities extends Page {
         super(testInstance, By.id("menu-cities"));
     }
 
-    @Step
     public Forecast chooseCity(String name) {
 
         find(cityWithName(name)).click();
@@ -17,7 +16,7 @@ public class MenuCities extends Page {
         waitFor().maxTime(10, TimeUnit.SECONDS).visibility(new NavMain(testInstance).loadedCity("dasdsad"));
 
         assertThat().page().titleContainsText("Krakow Weather XXX");
-        assertThat().element().withName("Forecast for tonight").exists(new FeedTabs(testInstance).tabForDay("Tonight"));
+        assertThat().element().exists(new FeedTabs(testInstance).tabForDay("Tonight"));
 
         return new Forecast(testInstance);
     }

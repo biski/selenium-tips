@@ -2,7 +2,8 @@
 
 ## Page implementation
 
-```public class MenuCities extends Page {
+```java
+public class MenuCities extends Page {
 
     public MenuCities(TestInstance testInstance) {
         super(testInstance, By.id("menu-cities"));
@@ -24,9 +25,11 @@
     public By cityWithName(String name) {
         return locate(By.xpath(".//a[contains(text(), '" + name + "')]"));
     }
-}```
+}
+```
 
 ## Page interface
+```java
 public abstract class Page {
     protected TestInstance testInstance;
     private By container;
@@ -65,3 +68,4 @@ public abstract class Page {
     }
 
 }
+```
